@@ -1,0 +1,21 @@
+  "type": "OpenApiConnection",
+  "inputs": {
+    "parameters": {
+      "source": "groups/cd6ffda5-a474-4bde-8d1d-d0a5a5b77faa",
+      "drive": "b!fsFSVUnPqU-e9bub9M0t1FTc2zi8SqpGinfTiFRk07ZWqP8iMNAcSYa0dcUfvI-I",
+      "file": "01NECYIBDQ2YN26THQHJCYVYIMYXLSP73P",
+      "table": "{48A88EB9-BFFE-47E7-B6C9-19F8B2882056}"
+    },
+    "host": {
+      "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness",
+      "connection": "shared_excelonlinebusiness",
+      "operationId": "GetItems"
+    }
+  },
+  "runAfter": {},
+  "metadata": {
+    "01NECYIBDQ2YN26THQHJCYVYIMYXLSP73P": "/testRelocations/test.xlsx",
+    "operationMetadataId": "88ddac0b-60b5-4a59-a3bb-efe8a32331cd",
+    "tableId": "{48A88EB9-BFFE-47E7-B6C9-19F8B2882056}"
+  }
+}
