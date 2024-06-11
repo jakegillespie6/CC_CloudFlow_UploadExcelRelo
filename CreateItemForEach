@@ -1,0 +1,46 @@
+{
+  "type": "Foreach",
+  "foreach": "@outputs('List_rows_present_in_a_table')?['body/value']",
+  "actions": {
+    "Create_item": {
+      "type": "OpenApiConnection",
+      "inputs": {
+        "parameters": {
+          "dataset": "https://crowncastle.sharepoint.com/sites/WestRegionVZWVCA2",
+          "table": "7f3d152c-9c58-4a73-8d3f-4ed533544a6f",
+          "item/OpportunityID": "@items('Apply_to_each_3')?['Opportunity ID']",
+          "item/BatchName": "@items('Apply_to_each_3')?['Batch Name']",
+          "item/CrownNodeID": "@items('Apply_to_each_3')?['Crown ID']",
+          "item/NodeSCU": "@items('Apply_to_each_3')?['SCU']",
+          "item/Lat": "@items('Apply_to_each_3')?['Lat']",
+          "item/Lon": "@items('Apply_to_each_3')?['Lon']",
+          "item/PoleType": "@items('Apply_to_each_3')?['Pole Type']",
+          "item/ZoningJurisdiction": "@items('Apply_to_each_3')?['Zoning Jurisdiction']",
+          "item/ProposedLat": "@items('Apply_to_each_3')?['Proposed Lat']",
+          "item/ProposedLon": "@items('Apply_to_each_3')?['Proposed Lon']",
+          "item/ProposedPoleType": "@items('Apply_to_each_3')?['Proposed Pole Type']",
+          "item/AssignedSmallCell": "@items('Apply_to_each_3')?['Assigned Small Cell']",
+          "item/AssignedFiber": "@items('Apply_to_each_3')?['Assigned Fiber']",
+          "item/AssignedConstruction": "@items('Apply_to_each_3')?['Assigned Construction']",
+          "item/AssignedPD": "@items('Apply_to_each_3')?['Assigned PD']"
+        },
+        "host": {
+          "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+          "connection": "shared_sharepointonline",
+          "operationId": "PostItem"
+        }
+      },
+      "metadata": {
+        "operationMetadataId": "2c86bd29-27b6-487e-a59a-b6469e41b663"
+      }
+    }
+  },
+  "runAfter": {
+    "List_rows_present_in_a_table": [
+      "Succeeded"
+    ]
+  },
+  "metadata": {
+    "operationMetadataId": "a619f14e-80b2-4eb7-a746-e7b3080856c5"
+  }
+}
