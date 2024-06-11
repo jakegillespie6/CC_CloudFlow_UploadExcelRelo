@@ -1,0 +1,105 @@
+{
+  "type": "Request",
+  "kind": "Button",
+  "inputs": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "file": {
+          "title": "File Content",
+          "type": "object",
+          "x-ms-dynamically-added": true,
+          "description": "Please select file or image",
+          "x-ms-content-hint": "FILE",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "contentBytes": {
+              "type": "string",
+              "format": "byte"
+            }
+          }
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "fullAddress": {
+              "title": "Full address",
+              "type": "string",
+              "x-ms-dynamically-added": false
+            },
+            "address": {
+              "type": "object",
+              "properties": {
+                "countryOrRegion": {
+                  "title": "Country/Region",
+                  "type": "string",
+                  "x-ms-dynamically-added": false
+                },
+                "city": {
+                  "title": "City",
+                  "type": "string",
+                  "x-ms-dynamically-added": false
+                },
+                "state": {
+                  "title": "State",
+                  "type": "string",
+                  "x-ms-dynamically-added": false
+                },
+                "street": {
+                  "title": "Street",
+                  "type": "string",
+                  "x-ms-dynamically-added": false
+                },
+                "postalCode": {
+                  "title": "Postal code",
+                  "type": "string",
+                  "x-ms-dynamically-added": false
+                }
+              },
+              "required": [
+                "countryOrRegion",
+                "city",
+                "state",
+                "street",
+                "postalCode"
+              ]
+            },
+            "coordinates": {
+              "type": "object",
+              "properties": {
+                "latitude": {
+                  "title": "Latitude",
+                  "type": "number",
+                  "x-ms-dynamically-added": false
+                },
+                "longitude": {
+                  "title": "Longitude",
+                  "type": "number",
+                  "x-ms-dynamically-added": false
+                }
+              },
+              "required": [
+                "latitude",
+                "longitude"
+              ]
+            }
+          }
+        },
+        "key-button-date": {
+          "title": "Date",
+          "type": "string",
+          "x-ms-dynamically-added": false
+        }
+      },
+      "required": [
+        "location",
+        "key-button-date"
+      ]
+    }
+  },
+  "metadata": {
+    "operationMetadataId": "97c8700b-edce-4c87-9a2f-c00bb833cffb"
+  }
+}
